@@ -1,4 +1,4 @@
-# image_batch-privacypreserver
+# image_batch_privacypreserver
 Tabular data synthesis and analysis
 
 ## Usage
