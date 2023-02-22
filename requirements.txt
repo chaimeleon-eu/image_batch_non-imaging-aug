@@ -1,0 +1,5 @@
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+pandas==1.5.3
+sdmetrics==0.9.1
+sdv==0.18.0
+numpy==1.23.0

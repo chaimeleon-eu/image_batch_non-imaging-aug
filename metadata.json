@@ -1,0 +1,48 @@
+{
+        "primary_key": "id",
+        "fields": {
+            "id": {
+                "type": "id",
+                "subtype": "integer"
+            },
+            "clump_thickness": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "uniformity_of_cell_size": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "uniformity_of_cell_shape": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "marginal_adhesion": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "single_epithelial_cell_size": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "bare_nuclei": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "bland_chromatin": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "normal_nucleoli": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "mitoses": {
+                "type": "numerical",
+                "subtype": "integer"
+            },
+            "class": {
+                "type": "categorical"
+            }
+        }
+    }
