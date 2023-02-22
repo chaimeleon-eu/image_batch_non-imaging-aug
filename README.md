@@ -16,5 +16,5 @@ Step 3. For a demo run (as presented in the report), copy the dataset.csv file a
 docker run --rm -v [working_directory]:/home/chaimeleon/datasets/ wp75 --target synthesis --data_dir /home/chaimeleon/datasets/data.csv
 
 #for analysis
-sudo docker run --rm -v [working_directory]:/home/chaimeleon/datasets privacypreserver --target analysis -s /home/chaimeleon/datasets/tvae.csv --metric ml_efficency --meta_dir /home/chaimeleon/datasets/metadata.json
+docker run --rm -v [working_directory]:/home/chaimeleon/datasets privacypreserver --target analysis -s /home/chaimeleon/datasets/tvae.csv --metric ml_efficency --meta_dir /home/chaimeleon/datasets/metadata.json
 ```
