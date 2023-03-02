@@ -1,5 +1,7 @@
 # image_batch_privacypreserver
-Tabular data synthesis and analysis
+
+## Description
+A data synthesizer and a privacy analyzer of tabluar data. 
 
 ## Usage
 Step 1. Git clone
@@ -18,3 +20,7 @@ docker run --rm -v [working_directory]:/home/chaimeleon/datasets/ wp75 --target 
 #for analysis
 docker run --rm -v [working_directory]:/home/chaimeleon/datasets privacypreserver --target analysis -s /home/chaimeleon/datasets/tvae.csv --metric ml_efficency --meta_dir /home/chaimeleon/datasets/metadata.json
 ```
+
+
+## License
+https://github.com/chaimeleon-eu/workstation-images/blob/main/LICENSE
