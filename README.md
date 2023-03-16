@@ -21,6 +21,3 @@ docker run --rm -v [working_directory]:/home/chaimeleon/datasets/ wp75 --target 
 docker run --rm -v [working_directory]:/home/chaimeleon/datasets privacypreserver --target analysis -s /home/chaimeleon/datasets/tvae.csv --metric ml_efficency --meta_dir /home/chaimeleon/datasets/metadata.json
 ```
 
-
-## License
-https://github.com/chaimeleon-eu/workstation-images/blob/main/LICENSE
