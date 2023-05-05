@@ -1,7 +1,7 @@
-# image_batch_privacypreserver
+# image_batch_non-imaging-aug
 
 ## Description
-A data synthesizer and a privacy analyzer of tabluar data. 
+A data synthesizer for the data augmentation purpose of non-imaging tabular data. 
 
 ## Usage
 Step 1. Git clone
