@@ -16,7 +16,8 @@ The objective of this repository is to provide a solution for synthesizing tabul
 
 This dataset is the Breast Cancer Wisconsin (BCW) dataset with 683 breast cancer patients. Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image. All these features were valued on a scale of 1 to 10, with 1 being the closest to benign and 10 the most anaplastic. The classification target is to classify whether the tumor is benign or malignant.
 
-![图片](https://user-images.githubusercontent.com/30890745/236933016-c9ac997a-7ebf-4ae8-bd89-07a8dd3ebb6b.png)
+![图片](https://user-images.githubusercontent.com/30890745/236933499-38cd6e5a-aa4b-4c16-8f09-d5e9ae998c77.png)
+
 
 
 #### Step 2. Build the docker using below command:
