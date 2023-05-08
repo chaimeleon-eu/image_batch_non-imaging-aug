@@ -8,7 +8,7 @@ Step 1. Git clone
 
 Step 2. In the privacy folder, build the container using
 ```
-sudo docker build --tag privacypreserver ./
+sudo docker build --tag non-imaging-aug ./
 ```
 
 Step 3. For a demo run (as presented in the report), copy the dataset.csv file and metadata.json file to a new working directory. And then test the synthesis performance with
