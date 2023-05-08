@@ -1,9 +1,7 @@
 import argparse
-import os
 from data_analysis import cal_metrics
 from data_synthesis import synthesis
-import torch
-from torchvision import transforms
+
 
 class BaseOptions():
     def __init__(self):
@@ -13,7 +11,7 @@ class BaseOptions():
     def initialize(self):
         # experiment target
         self.parser.add_argument("--target", type=str,default='analysis',
-                            help="Target of the task. Please choose from synthesis and analysis.")
+                            help="Target of the task. Please choose between synthesis and analysis.")
         self.parser.add_argument('-d',"--data_dir", type=str,
                                  default='/workspace/data.csv',
                             help="File path for the reference dataset. CSV format is required. ")
@@ -32,23 +30,17 @@ class BaseOptions():
         self.parser.add_argument('-s',"--syn_dir", type=str,
                                  default='/workspace/tvae_data.csv',
                             help="File path for the synthetic dataset. CSV format is required.")
-        self.parser.add_argument("--meta_dir", type=str,
-                                 default='/workspace/metadata.json',
-                            help="File path for the meta data. JSON format is required.")
-        self.parser.add_argument("--metric", type=str,
-                                 default='diagnostic_report',
-                            help="Metrics for analysis. Available metrics include diagnostic_report, quality report, attribute_attack, membership_attack, and ml_efficiency")
+
+        self.parser.add_argument("--cross_validation", type=int,
+                                 default=5,
+                            help="The time for cross validations")
         self.parser.add_argument("--label_col", type=str,
                                  default='class',
                             help="The column name for label. ")
         self.parser.add_argument("--id_col", type=str,
                                  default='id',
                             help="The column name for patient IDs. Patient IDs should be removed for ml efficiency evaluation. ")
-        self.parser.add_argument("--sensitive_fields", type=str,
-                                 default='clump_thickness,mitoses,bare_nuclei',
-                            help="The column names for sensitive fields. ")
-        self.parser.add_argument("--numerical_match_tolerance", default=0.1,type=float,
-                            help="A float larger than 0 representing how close two numerical values have to be in order to be considered a match")
+
 
         self.initialized = True
 
@@ -56,11 +48,11 @@ class BaseOptions():
         if not self.initialized:
             self.initialize()
         self.opt = self.parser.parse_args()
-        # args = vars(self.opt)
-        # print('------------ Options -------------')
-        # for k, v in sorted(args.items()):
-        #     print('%s: %s' % (str(k), str(v)))
-        # print('-------------- End ----------------')
+        args = vars(self.opt)
+        print('------------ Options -------------')
+        for k, v in sorted(args.items()):
+            print('%s: %s' % (str(k), str(v)))
+        print('-------------- End ----------------')
 
 
 
@@ -73,8 +65,8 @@ if __name__ == '__main__':
     if opt.target == 'synthesis':
         synthesis(opt.data_dir,opt.select_models,opt.num_samples,opt.output_dir)
     elif opt.target == 'analysis':
-        cal_metrics(opt.data_dir, opt.syn_dir, opt.metric, opt.meta_dir,
-                    opt.label_col, opt.id_col, opt.id_col,
-                    opt.sensitive_fields, opt.numerical_match_tolerance)
+        cal_metrics(opt.data_dir, opt.syn_dir,
+                    opt.label_col, opt.id_col, opt.cross_validation)
+
     else:
         raise ValueError('This function is not implemented. Try synthesis or analysis. ')
